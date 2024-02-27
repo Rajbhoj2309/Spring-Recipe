@@ -3,6 +3,8 @@ package com.springrecipe.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class IndexController {
@@ -18,5 +20,14 @@ public class IndexController {
 //		
 //		return "index";
 //	}
+	
+	// trace endpoint
+	@RequestMapping(value = "/trace-endpoint", method = RequestMethod.TRACE)
+    @ResponseBody
+    public String traceEndpoint() {
+        return "TRACE method is supported in this endpoint.";
+    }
+	
+	
 
 }
